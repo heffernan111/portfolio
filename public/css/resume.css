@@ -83,11 +83,20 @@ p.lead {
   color: #BD5D38;
 }
 
-#sideNav .navbar-nav .nav-item .nav-link {
+#sideNav .navbar-nav .nav-item .nav-link  {
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
 }
+
+.dropdown-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 
 #sideNav .navbar-toggler:focus {
   outline-color: #d48a6e;
@@ -190,3 +199,5 @@ a {
 a:hover, a:focus, a:active {
   color: #824027;
 }
+
+
