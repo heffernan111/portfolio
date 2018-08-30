@@ -7,7 +7,7 @@
                 <span class="text-primary">Heffernan</span>
             </h1>
             <div class="subheading mb-5">Nottingham
-                <a href="mailto:name@email.com">david.heff.dh@gmail.com</a>
+                <a href="mailto:david.heff.dh@gmail.com">david.heff.dh@gmail.com</a>
             </div>
                 <p class="lead mb-5">A full stack developer using the laravel framework to produce ....</p>
         </section>
