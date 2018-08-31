@@ -83,6 +83,9 @@ p.lead {
   color: #BD5D38;
 }
 
+
+
+
 #sideNav .navbar-nav .nav-item .nav-link  {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -130,6 +133,9 @@ p.lead {
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
   }
+
+  
+
   #sideNav .navbar-collapse {
     display: -webkit-box;
     display: -ms-flexbox;

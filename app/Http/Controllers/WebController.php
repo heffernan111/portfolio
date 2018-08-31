@@ -28,8 +28,9 @@ class WebController extends Controller
         $educations = DB::table('education')->get();
         $experiences = DB::table('experience')->get();
         $skills = DB::table('skills')->get();
+        $tutorials = DB::table('tutorials')->get();
 
 
-        return view('welcome',[ 'pages' => $pages, 'educations' => $educations, 'experiences' => $experiences, 'skills' => $skills ]);
+        return view('welcome',[ 'pages' => $pages, 'educations' => $educations, 'experiences' => $experiences, 'skills' => $skills,'tutorials' => '$tutorials' ]);
     }
 }

@@ -6,7 +6,8 @@
             <h1 class="mb-0">David
                 <span class="text-primary">Heffernan</span>
             </h1>
-            <div class="subheading mb-5">Nottingham
+            <div class="subheading mb-5">
+                <h3 class="mb-0">Nottingham</h3>
                 <a href="mailto:david.heff.dh@gmail.com">david.heff.dh@gmail.com</a>
             </div>
                 <p class="lead mb-5">A full stack developer using the laravel framework to produce ....</p>
@@ -25,7 +26,7 @@
                                             <p>{{ $experience->description }}</p>
                                     </div>
                                     <div class="resume-date text-md-right">
-                                        <span class="text-primary">{{ $experience->start }} - {{ $experience->end }}</span>
+                                        <p>{{ $experience->start }} - {{ $experience->end }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -45,13 +46,13 @@
                                 @endforeach
                             @else ($page->slug === 'skills')
                                 <div class="subheading mb-3">Programming Languages</div>
-                                @foreach($skills as $skill)
                                 <ul class="list-inline dev-icons">
+                                    @foreach($skills as $skill)
                                     <li class="list-inline-item">
-                                        <i class="fab {{ $skill->icon }}"></i>
+                                        <i class="fab {{ $skill->icon }} fa-fw" title="{{ $skill->description }}"></i>
                                     </li>
-                                </ul>
-                                @endforeach
+                                     @endforeach
+                                </ul>      
                             @endif
                     </div>
                 </section>
