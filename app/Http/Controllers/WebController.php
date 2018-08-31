@@ -31,6 +31,6 @@ class WebController extends Controller
         $tutorials = DB::table('tutorials')->get();
 
 
-        return view('welcome',[ 'pages' => $pages, 'educations' => $educations, 'experiences' => $experiences, 'skills' => $skills,'tutorials' => '$tutorials' ]);
+        return view('welcome',[ 'pages' => $pages, 'educations' => $educations, 'experiences' => $experiences, 'skills' => $skills,'tutorials' => $tutorials ]);
     }
 }

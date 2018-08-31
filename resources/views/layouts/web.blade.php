@@ -25,6 +25,7 @@
         <!-- Custom scripts for this template -->
         <script src="{{ asset('js/resume.js') }}"></script>
         <script src="{{ asset('js/dropdown.js') }}"></script>
+        <script src="{{ asset('js/tutorial.js') }}"></script>
     </head>
     <body>
         <div id="page-top">
