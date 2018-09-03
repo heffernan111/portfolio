@@ -46,9 +46,9 @@ body {font-family: Arial;}
 </style>
 
 
-    <div class="container-fluid p-0">
-        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-            <div class="my-auto">
+<div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
             <h1 class="mb-0">David
                 <span class="text-primary">Heffernan</span>
             </h1>
@@ -56,67 +56,81 @@ body {font-family: Arial;}
                 <h3 class="mb-0">Nottingham</h3>
                 <a href="mailto:david.heff.dh@gmail.com">david.heff.dh@gmail.com</a>
             </div>
-                <p class="lead mb-5">A full stack developer using the laravel framework to produce ....</p>
-        </section>
-        @foreach($pages as $page)
-            <hr class="m-0">
-                <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="{{ $page->slug }}">
-                    <div class="my-auto">
-                      <h2 class="mb-5"> {{ $page->slug }}</h2>
-                            @if ($page->slug === 'experience')
-                            @foreach($experiences as $experience)
-                                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                                    <div class="resume-content mr-auto">
-                                        <h3 class="mb-0">{{ $experience->title }}</h3>
-                                        <div class="subheading mb-3">{{ $experience->company }}</div>
-                                            <p>{{ $experience->description }}</p>
-                                    </div>
-                                    <div class="resume-date text-md-right">
-                                        <p>{{ $experience->start }} - {{ $experience->end }}</p>
-                                    </div>
+            <p class="lead mb-5">A full stack developer using the laravel framework to produce ....</p>
+    </section>
+    @foreach($pages as $page)
+    <hr class="m-0">
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="{{ $page->slug }}">
+            <div class="my-auto">
+                <h2 class="mb-5"> {{ $page->slug }}</h2>
+                @if ($page->slug === 'experience')
+                    @foreach($experiences as $experience)
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                        <div class="resume-content mr-auto">
+                            <h3 class="mb-0">{{ $experience->title }}</h3>
+                            <div class="subheading mb-3">{{ $experience->company }}</div>
+                                <p>{{ $experience->description }}</p>
+                        </div>
+                        <div class="resume-date text-md-right">
+                            <p>{{ $experience->start }} - {{ $experience->end }}</p>
+                        </div>
+                   </div>
+                    @endforeach
+                @elseif ($page->slug === 'education')
+                    @foreach($educations as $education)
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                        <div class="resume-content mr-auto">
+                           <h3 class="mb-0">{{ $education->school }}</h3>
+                            <div class="subheading mb-3">{{ $education->title }}</div>
+                                <div>{{ $education->description }}</div>
+                                   <p>{{ $education->grade }}</p>
                                 </div>
-                            @endforeach
-                            @elseif ($page->slug === 'education')
-                                @foreach($educations as $education)
-                                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                                        <div class="resume-content mr-auto">
-                                          <h3 class="mb-0">{{ $education->school }}</h3>
-                                            <div class="subheading mb-3">{{ $education->title }}</div>
-                                            <div>{{ $education->description }}</div>
-                                            <p>{{ $education->grade }}</p>
-                                        </div>
-                                        <div class="resume-date text-md-right">
-                                            <span class="text-primary">{{ $education->start }} - {{ $education->end }}</span>
-                                        </div>
-                                    </div>  
-                                @endforeach
-                            @elseif ($page->slug === 'skills')
-                                <div class="subheading mb-3">Programming Languages</div>
-                                <ul class="list-inline dev-icons">
-                                    @foreach($skills as $skill)
-                                    <li class="list-inline-item">
-                                        <a href="{{ $skill->link }}">
-                                            <i class="fab {{ $skill->icon }} fa-fw" title="{{ $skill->description }}"></i>
-                                        </a>
-                                    </li>
-                                     @endforeach
-                                     <div class="subheading mb-3">Cool Codes</div>
-                                </ul>      
-                            @else ($page->slug === 'tutorials')
-                                <div class="tab">
-                                    @foreach($tutorials as $tutorial)
-                                        <button class="tablinks"  onclick="openTut(event, '{{ $tutorial->title }}')">{{ $tutorial->title }}</button>
-                                    @endforeach
+                                <div class="resume-date text-md-right">
+                                    <span class="text-primary">{{ $education->start }} - {{ $education->end }}</span>
                                 </div>
-                                @foreach($tutorials as $tutorial)
-                                    <div id="{{ $tutorial->title }}" class="tabcontent">
-                                        <h3>{{ $tutorial->title }}</h3>
-                                        <p>{{ $tutorial->title }}<p>
-                                    </div>
+                    </div>  
+                    @endforeach
+                @elseif ($page->slug === 'skills')
+                    <div class="subheading mb-3">Programming Languages</div>
+                        <ul class="list-inline dev-icons">
+                            @foreach($skills as $skill)
+                            <li class="list-inline-item">
+                                <a href="{{ $skill->link }}">
+                                    <i class="fab {{ $skill->icon }} fa-fw" title="{{ $skill->description }}"></i>
+                                </a>
+                            </li>
+                             @endforeach
+                             <br>
+                        </ul>
+                        <div class="subheading mb-3">Cool Codes</div>
+                        <div class="row">
+                            <div class="tab">
+                                @foreach($codes as $code)
+                                    <button class="tablinks"  onclick="openTut(event, '{{ $code->title }}')">{{ $code->title }}</button>
                                 @endforeach
-                            @endif
+                            </div>
+                                @foreach($codes as $code)
+                            <div id="{{ $code->title }}" class="tabcontent">
+                                <h3>{{ $code->title }}</h3>
+                                <p>{{ $code->title }}<p>
+                            </div>
+                                @endforeach
+                        </div>   
+                @else ($page->slug === 'tutorials')
+                    <div class="tab">
+                        @foreach($tutorials as $tutorial)
+                            <button class="tablinks"  onclick="openTut(event, '{{ $tutorial->title }}')">{{ $tutorial->title }}</button>
+                        @endforeach
                     </div>
-                </section>
-            @endforeach
-        </div>
+                        @foreach($tutorials as $tutorial)
+                    <div id="{{ $tutorial->title }}" class="tabcontent">
+                        <h3>{{ $tutorial->title }}</h3>
+                        <p>{{ $tutorial->title }}<p>
+                    </div>
+                        @endforeach
+                @endif
+            </div>
+        </section>
+    @endforeach
+</div>
 @endsection
